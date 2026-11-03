@@ -1,0 +1,48 @@
+:root {
+  --bs-primary: #ffffff;
+  --bs-primary-rgb: 13, 110, 253;
+}
+
+.login-bg {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Garante o tempo da transição na imagem */
+.transition-zoom {
+  transition: transform 0.4s ease-in-out;
+}
+
+/* O gatilho: Hover no card dos combos aumenta a imagem */
+.transition-hover:hover .transition-zoom {
+  transform: scale(1.15) !important;
+}
+
+.product-card:hover .transition-zoom {
+  transform: scale(1.1);
+}
+
+/* Efeito no botão Adicionar */
+.btn-add-hover {
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.btn-add-hover:hover {
+  opacity: 0.7;
+}
+
+.btn-add-hover::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+.btn-add-hover:hover::after {
+  width: 100%;
+}

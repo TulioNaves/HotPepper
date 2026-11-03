@@ -1,0 +1,68 @@
+.floating-cart-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999; /* Garante que fique acima de tudo */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse; /* Ícone na direita, texto na esquerda */
+}
+
+.cart-circle {
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 3px solid #dc3545; /* Vermelho HotPepper */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.cart-icon-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Efeito Samsung: Aumenta levemente e brilha no hover */
+.floating-cart-container:hover .cart-circle {
+  transform: scale(1.1);
+  background-color: #dc3545;
+}
+
+.floating-cart-container:hover .cart-icon-img {
+  filter: brightness(0) invert(1); /* Inverte a cor do ícone para branco se for PNG escuro */
+}
+
+/* Tooltip lateral que aparece no hover */
+.cart-tooltip {
+  margin-right: 15px;
+  background: #333;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.floating-cart-container:hover .cart-tooltip {
+  opacity: 1;
+}
